@@ -31,16 +31,28 @@ def create_ships(board):
 
 
 def get_ship_location():
-    row = input('Please enter a ship row 1-8').upper()
+    row = input('Please enter a ship row 1-8')
     while row not in '12345678':
         print('Please enter a valid row')
-        row = input('Please enter a ship row 1-8').upper()
+        row = input('Please enter a ship row 1-8')
+    column = input('Please enter a ship column A-H').upper()
+    while row not in 'ABCDEFGH':
+        print('Please enter a valid column')
+        column = input('Please enter a ship column A-H').upper()
+    return int(row) - 1, letters_to_numbers[column]
 
 
-def count_hit_ships():
-    pass
+def count_hit_ships(board):
+    count = 0
+    for row in board:
+      for column in row:
+        if column == 'X':
+          count += 1
+    return count
 
 
-create_ships()
+create_ships(HIDDEN_BOARD)
 turns = 10
+print_board(HIDDEN_BOARD)
+print_board(GUESS_BOARD)
 #while turns > 0:
