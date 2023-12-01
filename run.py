@@ -10,8 +10,8 @@ letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H
 
 
 def print_board(board):
-    print('A B C D E F G H')
-    print('---------------')
+    print('  A B C D E F G H')
+    print('  ---------------')
     row_number = 1
     for row in board:
         print("%d|%s" % (row_number, "|".join(row)))
@@ -27,14 +27,14 @@ def create_ships(board):
 
 
 def get_ship_location():
-    row = input('Please enter a ship row 1-8')
+    row = input('Please enter a ship row 1-8: ')
     while row not in '12345678':
         print('Please enter a valid row')
-        row = input('Please enter a ship row 1-8')
-    column = input('Please enter a ship column A-H').upper()
-    while row not in 'ABCDEFGH':
+        row = input('Please enter a ship row 1-8: ')
+    column = input('Please enter a ship column A-H: ').upper()
+    while column not in 'ABCDEFGH':
         print('Please enter a valid column')
-        column = input('Please enter a ship column A-H').upper()
+        column = input('Please enter a ship column A-H: ').upper()
     return int(row) - 1, letters_to_numbers[column]
 
 
@@ -66,7 +66,7 @@ while turns > 0:
     if count_hit_ships(GUESS_BOARD) == 5:
         print('Congratulations, you have sunk all the battleships')
         break
-    print('You have ' + str(turns) + 'turns remaining')
+    print('You have ' + str(turns) + ' turns remaining')
     if turns == 0:
         print('Sorry you ran out of turns, Game Over')
         break
