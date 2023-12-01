@@ -1,7 +1,3 @@
-#Legend
-#X for placing ship and hit battleship
-# ' ' for available space
-# '-' vor missed shot
 
 
 from random import randint
@@ -45,14 +41,32 @@ def get_ship_location():
 def count_hit_ships(board):
     count = 0
     for row in board:
-      for column in row:
-        if column == 'X':
-          count += 1
+        for column in row:
+            if column == 'X':
+                count += 1
     return count
 
 
 create_ships(HIDDEN_BOARD)
 turns = 10
-print_board(HIDDEN_BOARD)
-print_board(GUESS_BOARD)
-#while turns > 0:
+while turns > 0:
+    print('Welcome to Battleship')
+    print_board(GUESS_BOARD)
+    row, column = get_ship_location()
+    if GUESS_BOARD[row][column] == '-':
+        print('You already guessed that')
+    elif HIDDEN_BOARD[row][column] == 'X':
+        print('Hit! Well done, You have hit the battleship')
+        GUESS_BOARD[row][column] = 'X'
+        turns -= 1
+    else:
+        print('Sorry, you missed')
+        GUESS_BOARD[row][column] = '-'
+        turns -= 1
+    if count_hit_ships(GUESS_BOARD) == 5:
+        print('Congratulations, you have sunk all the battleships')
+        break
+    print('You have ' + str(turns) + 'turns remaining')
+    if turns == 0:
+        print('Sorry you ran out of turns, Game Over')
+        break
