@@ -1,32 +1,36 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Love Battleship
 
-Welcome,
+Love Battleship is a Battleship game to test your qualties as a battleship player versus the computer.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+### Existing Features
 
-## Reminders
+- __Horizontal and vertical__
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+  - The features is a horizontal row with letters A through H. There is also a vertical row with number 1 through 8. Together they create a grid field.
+  - The users the has to choose a number and letter where they think the computer have put their ships.
 
-## Creating the Heroku app
+You have 10 tries to hit 5 ships.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Features Left to Implement
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- Different difficulties
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Deployment
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
 
-Connect your GitHub repository and deploy as normal.
+- The site was deployed to Heroku. The steps to deploy are as follows: 
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+The live link can be found here - https://lovebattleship-649f8dd2819d.herokuapp.com/
 
----
 
-Happy coding!
+## Credits 
+
+To help me with this project I took help form different sources.
+
+https://codereview.stackexchange.com/questions/232013/a-simple-battleship-game
+https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=706s&ab_channel=KnowledgeMavens
+https://www.youtube.com/watch?v=7Ki_2gr0rsE&ab_channel=DylanIsrael
+
+Thank you!
